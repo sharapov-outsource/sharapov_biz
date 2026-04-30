@@ -70,10 +70,10 @@ export default function App() {
           <p className="clients-eyebrow">{t.clientsEyebrow}</p>
           <div className="client-grid">
             {t.clients.map((c, i) => (
-              <div className="client" key={i}>
+              <a className="client" key={i} href={c.href} target="_blank" rel="noreferrer noopener">
                 <div className="client-name">{c.name}</div>
                 <div className="client-meta">{c.meta}</div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -141,8 +141,8 @@ export default function App() {
             {t.compareRows.map((row, i) => (
               <div className="compare-row" key={i}>
                 <div className="col q">{row[0]}</div>
-                <div className="col"><span className="mark no">×</span><span>{row[1]}</span></div>
-                <div className="col"><span className="mark yes">✓</span><span>{row[2]}</span></div>
+                <div className="col col-no" data-label={t.compareCols[1]}><span className="mark no">×</span><span>{row[1]}</span></div>
+                <div className="col col-yes" data-label={t.compareCols[2]}><span className="mark yes">✓</span><span>{row[2]}</span></div>
               </div>
             ))}
           </div>
