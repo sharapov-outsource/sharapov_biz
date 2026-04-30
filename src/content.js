@@ -63,7 +63,7 @@ export const COPY = {
     compareEyebrow: '03 · With Alex vs. without',
     compareTitle: 'What changes when a senior owns the build.',
     compareLead: 'No magic. Just twenty years of avoiding the same mistakes.',
-    compareCols: ['Question', 'Without senior ownership', 'With Alex'],
+    compareCols: ['Question', 'Without Alex', 'With Alex'],
     compareRows: [
       ['Architecture decisions', 'Decided by whoever is loudest in standup. Revisited every six months.', 'Decided once, with reasons documented. Holds up under load.'],
       ['Production incidents', 'Discovered by users. Patched on the live server. Logged in Slack.', 'Caught by monitoring. Postmortem written. Won’t happen twice.'],
@@ -92,7 +92,7 @@ export const COPY = {
       { n: '01', t: 'Discovery brief', d: 'Async written exchange. You describe the system, team, constraints and deadline. I respond in detail.', dur: 'Free · within 1 day' },
       { n: '02', t: 'Scoping & estimate', d: 'A short written proposal: scope, milestones, fixed price or hourly, what could go wrong.', dur: '3–5 working days' },
       { n: '03', t: 'Build & ship', d: 'Weekly demo. Async updates. Code in your repo. No black box.', dur: 'Per scope · ~6–12 weeks typical' },
-      { n: '04', t: 'Handover & retainer', d: 'Docs, runbooks, knowledge transfer. Optional retainer for ongoing ownership.', dur: 'Ongoing or closed' },
+      { n: '04', t: 'Handover & retainer', d: 'Docs, runbooks, knowledge transfer. Optional retainer for ongoing ownership.', dur: 'On demand' },
     ],
     contactTitle_1: 'Got a system that needs',
     contactTitle_2: 'a senior pair of hands?',
