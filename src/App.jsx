@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { COPY, SOCIAL } from './content.js';
+
+const LANG_KEY = 'sharapov.biz:lang';
 
 function renderBody(text) {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
@@ -12,11 +14,18 @@ function renderBody(text) {
 export default function App() {
   const [lang, setLang] = useState(() => {
     if (typeof window === 'undefined') return 'en';
-    const params = new URLSearchParams(window.location.search);
-    const q = params.get('lang');
+    const q = new URLSearchParams(window.location.search).get('lang');
     if (q === 'en' || q === 'ru') return q;
+    const stored = localStorage.getItem(LANG_KEY);
+    if (stored === 'en' || stored === 'ru') return stored;
     return navigator.language?.startsWith('ru') ? 'ru' : 'en';
   });
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    localStorage.setItem(LANG_KEY, lang);
+  }, [lang]);
+
   const t = COPY[lang];
   const navIds = ['#about', '#services', '#work', '#process', '#contact'];
 
