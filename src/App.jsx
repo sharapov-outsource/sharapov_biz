@@ -155,24 +155,28 @@ export default function App() {
           <h2 className="section-title">{t.workTitle}</h2>
           <p className="section-lead">{t.workLead}</p>
           <div className="work-grid">
-            {t.work.map((w, i) => (
-              <a className="work" href={w.href} target="_blank" rel="noreferrer noopener" key={i}>
-                <div className="work-img" style={{ backgroundImage: `url(${w.img})` }} />
-                <div className="work-body">
-                  <div className="meta"><span>{w.meta_l}</span><span>{w.meta_r}</span></div>
-                  <h3>{w.t}</h3>
-                  <p className="desc">{w.d}</p>
-                  <div className="metrics">
-                    {w.m.map((mx, j) => (
-                      <div className="m" key={j}>
-                        <div className="n">{mx.n}</div>
-                        <div className="l">{mx.l}</div>
-                      </div>
-                    ))}
+            {t.work.map((w, i) => {
+              const Tag = w.href ? 'a' : 'div';
+              const linkProps = w.href ? { href: w.href, target: '_blank', rel: 'noreferrer noopener' } : {};
+              return (
+                <Tag className="work" key={i} {...linkProps}>
+                  <div className="work-img" style={{ backgroundImage: `url(${w.img})` }} />
+                  <div className="work-body">
+                    <div className="meta"><span>{w.meta_l}</span><span>{w.meta_r}</span></div>
+                    <h3>{w.t}</h3>
+                    <p className="desc">{w.d}</p>
+                    <div className="metrics">
+                      {w.m.map((mx, j) => (
+                        <div className="m" key={j}>
+                          <div className="n">{mx.n}</div>
+                          <div className="l">{mx.l}</div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </a>
-            ))}
+                </Tag>
+              );
+            })}
           </div>
         </div>
       </section>
