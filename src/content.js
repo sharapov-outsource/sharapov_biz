@@ -120,7 +120,7 @@ export const COPY = {
     ],
     clientsEyebrow: 'Со мной работали команды',
     clients: [
-      { name: 'anbit', meta: 'IT-услуги · DE', href: 'https://anbit.io' },
+      { name: 'anbit', meta: 'IT-услуги', href: 'https://anbit.io' },
       { name: 'Nemerald', meta: 'B2B телеком', href: 'https://nemerald.com' },
       { name: 'Cosmotown', meta: 'регистратор ICANN', href: 'https://cosmotown.com' },
       { name: 'Madani Rings', meta: 'ювелирный опт', href: 'https://madanirings.com' },
